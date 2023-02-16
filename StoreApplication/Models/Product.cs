@@ -12,6 +12,11 @@ namespace StoreApplication.Models
         public int Id { get; }
         public decimal Price { get;private set; }
 
+        public string? ImgPath { get; private set; }
+
+        public double Discount { get; private set; } = 0;
+
+
 
 
 
