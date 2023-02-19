@@ -6,8 +6,130 @@
              xmlns:local="clr-namespace:StoreApplication.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Separator">
+            <Setter Property="MinHeight" Value="2"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="5"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="center"/>
+        </Style>
+    </UserControl.Resources>
     <StackPanel>
         <TextBlock Text="Store View"/>
+        <StackPanel >
 
+            <StackPanel Orientation="Horizontal">
+                <Grid >
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" >
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="2" Margin="5"> 
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="2" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="3" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="3" Margin="5" >
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="3" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="3" Margin="5">
+
+                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
+                        <Label Content="Volley ball"/>
+                    </StackPanel>
+
+
+
+                </Grid>
+
+            </StackPanel>
+        </StackPanel>
     </StackPanel>
 </UserControl>
