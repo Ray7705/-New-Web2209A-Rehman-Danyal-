@@ -24,7 +24,6 @@ namespace StoreApplication.Views
         public LoginView()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
         }
     }
 }

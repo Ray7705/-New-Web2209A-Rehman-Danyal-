@@ -25,7 +25,6 @@ namespace StoreApplication.Views
         public CartView(Cart cart)
         {
             InitializeComponent();
-            DataContext = new CartViewModel();
         }
     }
 }
