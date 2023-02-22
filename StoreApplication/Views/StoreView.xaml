@@ -20,116 +20,32 @@
         <TextBlock Text="Store View"/>
         <StackPanel >
 
+            <DockPanel>
+                
             <StackPanel Orientation="Horizontal">
-                <Grid >
+                <DataGrid ItemsSource="{Binding Path=Products}" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="" Binding="{Binding Path=Name}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                    
 
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-
-
-                    </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Grid.Column="0" >
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="2" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Grid.Column="2" Margin="5"> 
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="3" Grid.Column="2" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="0" Grid.Column="3" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="1" Grid.Column="3" Margin="5" >
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball" />
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Grid.Column="3" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="3" Grid.Column="3" Margin="5">
-
-                        <Image Source="{Binding Path=VolleyballImg}" MaxHeight="100" MaxWidth="100"/>
-                        <Label Content="Volley ball"/>
-                    </StackPanel>
-
-
-
-                </Grid>
-
+                </DataGrid>
             </StackPanel>
+                <Button Content="Display" Command="{Binding Path=DisplayCommand}"/>
+                <StackPanel Orientation="Vertical">
+                    
+                <Grid Name="SelectedItemGrid" Visibility="Collapsed">
+                    
+                    
+                    <Image Source="{Binding Path=SelectedProductImgPath}" MaxHeight="200" MaxWidth="200" Margin="5"/>
+                    <Label Content="{Binding Path=SelectedProductName}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding Path=SelectedProductDescription}"/>
+                </Grid>
+                
+                </StackPanel>
+            </DockPanel>       
         </StackPanel>
     </StackPanel>
 </UserControl>

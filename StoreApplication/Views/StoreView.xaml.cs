@@ -26,5 +26,15 @@ namespace StoreApplication.Views
             InitializeComponent();
             DataContext = new StoreViewModel();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void OnDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedItemGrid.Visibility=Visibility.Visible;
+        }
     }
 }
