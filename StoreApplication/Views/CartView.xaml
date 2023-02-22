@@ -21,11 +21,14 @@
 
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-
-                <Label Content="SubTotal" HorizontalAlignment="Center"/>
+                <Label Content="SubTotal: " HorizontalAlignment="Center"/>
                 <TextBlock MinWidth="20" Text="{Binding Path=SubTotal}"/>
             </StackPanel>
-            <Label Content="Total" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Total: " HorizontalAlignment="Center"/>
+                <TextBlock MinWidth="20" Text="{Binding Path=Total}"/>
+            </StackPanel>
             <Button Content="Pay" HorizontalAlignment="Center"/>
         </StackPanel>
     </StackPanel>
