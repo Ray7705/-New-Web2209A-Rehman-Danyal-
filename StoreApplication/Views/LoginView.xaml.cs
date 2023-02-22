@@ -25,5 +25,6 @@ namespace StoreApplication.Views
         {
             InitializeComponent();
         }
+        
     }
 }
