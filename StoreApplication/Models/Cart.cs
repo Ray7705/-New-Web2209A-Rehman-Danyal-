@@ -23,12 +23,12 @@ namespace StoreApplication.Models
             }
         }
 
-        public decimal Subtotal { get; }
+        public decimal SubTotal { get; }
         public decimal Total
         {
             get
             {
-                return (1+taxes) * Subtotal;
+                return (1+taxes) * SubTotal;
             }
             private set
             {
@@ -44,7 +44,7 @@ namespace StoreApplication.Models
         public Cart()
         {
             Quantity = 0;
-            Subtotal = 0m;
+            SubTotal = 0m;
             Total = 0m;
         }
 
