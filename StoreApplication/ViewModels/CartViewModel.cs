@@ -11,14 +11,33 @@ namespace StoreApplication.ViewModels
 {
     public class CartViewModel
     {
-        //public ObservableCollection<Cart> Carts { get; }
+        public ObservableCollection<Product> ProductsInCart { get; }
         public DelegateCommand PayCommand { get; }
+        public Cart SelectedProduct { get; set; }
 
         public CartViewModel(Cart cart)
         {
             //Carts = new ObservableCollection<Cart> { cart };
+            PayCommand = new DelegateCommand(Pay);
 
+        }
 
+        private void Pay(object _)
+        {
+
+        }
+
+        public void AddProductsToCart()
+        {
+
+        }
+
+        private void DisplayProduct(object _)
+        {
+            if( SelectedProduct != null)
+            {
+
+            }
         }
 
     }

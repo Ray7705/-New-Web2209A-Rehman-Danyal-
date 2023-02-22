@@ -18,6 +18,9 @@ namespace StoreApplication.ViewModels
         public LoginViewModel()
         {
             Users = new ObservableCollection<User>();
+            {
+                Users.Add(new User("Rehman", "Basharat", "ray555", "Password123"));
+            }
             LogInCommand = new DelegateCommand(Login);
             SignUpCommand = new DelegateCommand(SignUp);
         }
@@ -25,7 +28,7 @@ namespace StoreApplication.ViewModels
 
         private void Login(object _)
         {
-
+            User foundUser = Users.FirstOrDefault(user => user.Username == Username && user.Password == Password);
         }
         private void SignUp(object _)
         {

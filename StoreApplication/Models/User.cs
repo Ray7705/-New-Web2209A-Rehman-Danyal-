@@ -10,16 +10,16 @@ namespace StoreApplication.Models
     public class User
     {
 
-        public string Username { private get; set; }
-        public string FirstName { get;private set; }
-        public string LastName { get;private set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get;set; }
 
-        public string Password { get;private set; }
+        public string Password { get; set; }
 
         //public Cart LastCart { get;private set; }
 
 
-        public User(string userName, string firstName, string lastName , string password)
+        public User(string firstName, string lastName , string userName, string password)
         {
             if(string.IsNullOrEmpty(password))
                 throw new ArgumentNullException("Password is null or empty");
@@ -30,7 +30,7 @@ namespace StoreApplication.Models
             if(string.IsNullOrEmpty(password))
                 throw new ArgumentNullException("Last Name is null or empty");
 
-            Username= userName;
+            UserName= userName;
             FirstName= firstName;
             LastName= lastName;
             Password= password;
