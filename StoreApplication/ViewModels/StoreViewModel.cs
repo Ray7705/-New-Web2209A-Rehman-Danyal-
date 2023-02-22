@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace StoreApplication.ViewModels
 {
         public delegate void DisplayProductDelegate();
-    internal class StoreViewModel :ViewModel , INotifyPropertyChanged
+    public class StoreViewModel :ViewModel , INotifyPropertyChanged
     {
         public event DisplayProductDelegate DisplayProductevent;
 
@@ -21,7 +21,7 @@ namespace StoreApplication.ViewModels
         public ObservableCollection<Product> Products { get; }
         //public DelegateCommand DisplayProductCommand { get; }
 
-        public StoreViewModel()
+        public StoreViewModel(Cart cart)
         {
             Products = new ObservableCollection<Product>();
             {
@@ -29,7 +29,8 @@ namespace StoreApplication.ViewModels
             }
             Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
             Products.Add(new Product("voll", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
-          //  DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
+            //  DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
+            cart = new Cart();
 
         }
         private void DisplayProduct(object _)

@@ -22,30 +22,15 @@ namespace StoreApplication.Views
     /// </summary>
     public partial class StoreView : UserControl
     {
-        public StoreView(Cart cart)
+        public StoreView()
         {
             InitializeComponent();
-            StoreViewModel storeViewModel = new StoreViewModel();
             //     storeViewModel. += OnDisplay_Click;
-            DataContext = storeViewModel; // do it outside
+                    // do it outside
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-        }
-
-        private void OnDisplay_Click(object sender, RoutedEventArgs e)
-        {
-
-            SelectedProductDisplay.Visibility = Visibility.Visible;
-
-            //  SelectedItemGrid.Visibility=Visibility.Visible;
-        }
-
-        private void DataGrid_Click(object sender, MouseButtonEventArgs e)
-        {
-            SelectedProductDisplay.Visibility = Visibility.Visible;
 
         }
     }

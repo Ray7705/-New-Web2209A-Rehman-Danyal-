@@ -44,7 +44,7 @@
 
                 <StackPanel Orientation="Horizontal"  >
                     <Separator />
-                    <DataGrid  Background="#8DAA9D" MouseDoubleClick="DataGrid_Click" ItemsSource="{Binding Path=Products}" Height="300" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
+                    <DataGrid  Background="#8DAA9D"  ItemsSource="{Binding Path=Products}" Height="300" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
                         <DataGrid.Columns  >
                            
                             <DataGridTextColumn MinWidth="100" Header="Name" Binding="{Binding Path=Name}" IsReadOnly="True"/>
