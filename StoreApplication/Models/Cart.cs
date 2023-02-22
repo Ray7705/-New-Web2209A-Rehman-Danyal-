@@ -24,15 +24,28 @@ namespace StoreApplication.Models
         }
 
         public decimal Subtotal { get; }
-        public decimal Total { get; }
+        public decimal Total
+        {
+            get
+            {
+                return (1+taxes) * Subtotal;
+            }
+            private set
+            {
+                total= value;
+            }
+        }
 
 
         private int quantity;
-        private const double taxes = .15;
+        private const decimal taxes = 0.15m;
+        private decimal total;
 
-        public Cart()
+        public Cart(int quantity , decimal subTotal, decimal total)
         {
-
+            Quantity = quantity;
+            Subtotal = subTotal;
+            Total = total;
         }
 
 

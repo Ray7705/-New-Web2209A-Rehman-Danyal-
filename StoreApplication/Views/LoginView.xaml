@@ -6,8 +6,33 @@
              xmlns:local="clr-namespace:StoreApplication.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Text="Login View"/>
 
+
+
+
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Content="Username: " HorizontalContentAlignment="Right"/>
+            <TextBox Grid.Column="1" Grid.Row="0" MinWidth="100"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Password   " HorizontalContentAlignment="Right"/>
+            <PasswordBox Grid.Column="1" Grid.Row="1"/>
+        </Grid>
+        <DockPanel HorizontalAlignment="Right">
+        <Button Name="SignUp" Content="Sign Up" MinHeight="30" MaxWidth="50"/>
+        <Separator MinWidth="20"/>
+        <Button Name="LogIn" Content="Log In" MinHeight="30" MaxWidth="50"/>
+        <Separator MinWidth="20"/>
+        </DockPanel>
+        
     </StackPanel>
+    
 </UserControl>
