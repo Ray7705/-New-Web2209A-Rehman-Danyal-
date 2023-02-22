@@ -12,8 +12,8 @@ namespace StoreApplication.ViewModels
     public class LoginViewModel
     {
         public ObservableCollection<User> Users { get; }
-        public DelegateCommand LogInCommand { get; set; }
-        public DelegateCommand SignUpCommand { get; set; }
+        public DelegateCommand LogInCommand { get; }
+        public DelegateCommand SignUpCommand { get; }
 
         public LoginViewModel()
         {
