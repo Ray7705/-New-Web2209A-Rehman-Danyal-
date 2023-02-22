@@ -11,41 +11,58 @@
             <Setter Property="MinHeight" Value="2"/>
             <Setter Property="Margin" Value="2"/>
             <Setter Property="MinWidth" Value="5"/>
+            <Setter Property="Background" Value="Transparent"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="HorizontalContentAlignment" Value="center"/>
         </Style>
+
+     
+        
     </UserControl.Resources>
-    <StackPanel>
-        <TextBlock Text="Store View"/>
+    <StackPanel >
         <StackPanel >
 
-            <DockPanel>
-                
-            <StackPanel Orientation="Horizontal">
-                <DataGrid ItemsSource="{Binding Path=Products}" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
-                    <DataGrid.Columns >
-                        <DataGridTextColumn Header="" Binding="{Binding Path=Name}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" IsReadOnly="True"/>
-                    </DataGrid.Columns>
-                    
+            <DockPanel >
+                <Separator/>
+                <Border CornerRadius="8" BorderBrush="GreenYellow" BorderThickness="2">
+
+                    <StackPanel Background="AliceBlue"  Name="SelectedProductDisplay">
+                        <TextBlock Text=" Product view " HorizontalAlignment="Center" FontSize="25"/>
+                        <Separator/>
+                        <Line   X1="10"   X2="140"  Stroke="Red"  StrokeThickness="4" />
+                        <Separator/>
+                        <Image Source="{Binding Path=SelectedProduct.ImgPath}" MaxHeight="100" MaxWidth="100" Margin="5"/>
+                        <Label Content="{Binding Path=SelectedProduct.Name}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=SelectedProduct.Price}" FontSize="18" Foreground="Black" HorizontalAlignment="Center" />
+                        <TextBlock Text="{Binding Path=SelectedProduct.Discount}" FontSize="18" Foreground="Black" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=SelectedProduct.Description}"  FontSize="12" Foreground="Black" HorizontalAlignment="Center"/>
+
+                    </StackPanel>
+                </Border>
+                <Separator Width="100"/>
+
+                <StackPanel Orientation="Horizontal"  >
+                    <Separator />
+                    <DataGrid  Background="#8DAA9D" MouseDoubleClick="DataGrid_Click" ItemsSource="{Binding Path=Products}" Height="300" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
+                        <DataGrid.Columns  >
+                           
+                            <DataGridTextColumn MinWidth="100" Header="Name" Binding="{Binding Path=Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn MinWidth="100" Header="Price" Binding="{Binding Path=Price}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
 
 
-                </DataGrid>
-            </StackPanel>
-                <Button Content="Display" Command="{Binding Path=DisplayCommand}"/>
-                <StackPanel Orientation="Vertical">
-                    
-                <Grid Name="SelectedItemGrid" Visibility="Collapsed">
-                    
-                    
-                    <Image Source="{Binding Path=SelectedProductImgPath}" MaxHeight="200" MaxWidth="200" Margin="5"/>
-                    <Label Content="{Binding Path=SelectedProductName}" HorizontalAlignment="Center"/>
-                    <TextBlock Text="{Binding Path=SelectedProductDescription}"/>
-                </Grid>
-                
+
+                    </DataGrid>
                 </StackPanel>
-            </DockPanel>       
+
+
+
+
+
+
+            </DockPanel>
         </StackPanel>
+
     </StackPanel>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using StoreApplication.ViewModels;
+﻿using StoreApplication.Models;
+using StoreApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,12 @@ namespace StoreApplication.Views
     /// </summary>
     public partial class StoreView : UserControl
     {
-        public StoreView()
+        public StoreView(Cart cart)
         {
             InitializeComponent();
-            DataContext = new StoreViewModel();
+            StoreViewModel storeViewModel = new StoreViewModel();
+            //     storeViewModel. += OnDisplay_Click;
+            DataContext = storeViewModel; // do it outside
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -34,7 +37,16 @@ namespace StoreApplication.Views
 
         private void OnDisplay_Click(object sender, RoutedEventArgs e)
         {
-            SelectedItemGrid.Visibility=Visibility.Visible;
+
+            SelectedProductDisplay.Visibility = Visibility.Visible;
+
+            //  SelectedItemGrid.Visibility=Visibility.Visible;
+        }
+
+        private void DataGrid_Click(object sender, MouseButtonEventArgs e)
+        {
+            SelectedProductDisplay.Visibility = Visibility.Visible;
+
         }
     }
 }

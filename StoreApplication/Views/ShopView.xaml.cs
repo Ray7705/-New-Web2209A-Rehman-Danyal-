@@ -1,5 +1,4 @@
 ﻿using StoreApplication.Models;
-using StoreApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +17,16 @@ using System.Windows.Shapes;
 namespace StoreApplication.Views
 {
     /// <summary>
-    /// Interaction logic for CartView.xaml
+    /// Interaction logic for ShopView.xaml
     /// </summary>
-    public partial class CartView : UserControl
+    public partial class ShopView : UserControl
     {
-        public CartView(Cart cart)
+        public ShopView()
         {
             InitializeComponent();
-            DataContext = new CartViewModel();
+
+            Cart cart = new Cart();
+            StoreView storeView = new StoreView(cart);
         }
     }
 }

@@ -1,21 +1,25 @@
 ﻿using Chevalier.Utility.Commands;
+using Chevalier.Utility.ViewModels;
 using StoreApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StoreApplication.ViewModels
 {
-    internal class StoreViewModel
+        public delegate void DisplayProductDelegate();
+    internal class StoreViewModel :ViewModel , INotifyPropertyChanged
     {
+        public event DisplayProductDelegate DisplayProductevent;
 
         public string VolleyballImg => "https://upload.wikimedia.org/wikipedia/commons/5/5a/Volleyball_ball.jpg";
 
         public ObservableCollection<Product> Products { get; }
-        public DelegateCommand DisplayProductCommand { get; }
+        //public DelegateCommand DisplayProductCommand { get; }
 
         public StoreViewModel()
         {
@@ -23,18 +27,18 @@ namespace StoreApplication.ViewModels
             {
 
             }
+            Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
             Products.Add(new Product("voll", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
-            Products.Add(new Product("voll", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
-            DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
+          //  DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
 
         }
         private void DisplayProduct(object _)
         {
-           
+            
             
         }
         
-        public Product product;
+       private Product product;
         public Product SelectedProduct
         {
             get
@@ -44,7 +48,9 @@ namespace StoreApplication.ViewModels
             set
             {
                 product = value;
-                DisplayProductCommand.NotifyCanExecuteChanged();
+                //DisplayProductCommand.NotifyCanExecuteChanged();
+                NotifyPropertyChanged(nameof(SelectedProduct));
+                DisplayProductevent?.Invoke();
 
             }
         }
@@ -53,11 +59,11 @@ namespace StoreApplication.ViewModels
             return product != null;
         }
 
-        public string SelectedProductName { get { return SelectedProduct.Name; } }
-        public string SelectedProductDescription { get { return SelectedProduct.Description; } }
-        public string SelectedProductImgPath { get { return SelectedProduct.ImgPath; } }
-       
-        public decimal SelectedProductPrice { get { return SelectedProduct.Price; } }
-        public double SelectedProductDiscount { get { return SelectedProduct.Discount; } }
+        //public string SelectedProductName { get { return SelectedProduct.Name; } }
+        //public string SelectedProductDescription { get { return SelectedProduct.Description; } }
+        ////public string SelectedProductImgPath { get { return SelectedProduct.ImgPath; } }
+
+        //public decimal SelectedProductPrice { get { return SelectedProduct.Price; } }
+        //public double SelectedProductDiscount { get { return SelectedProduct.Discount; } }
     }
 }

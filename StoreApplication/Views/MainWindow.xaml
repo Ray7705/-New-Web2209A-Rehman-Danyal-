@@ -11,10 +11,7 @@
         >
     
     <StackPanel>
-        <TextBlock  Text="Main Window"/>
-        <local:LoginView />
-        <local:CartView/>
-        <local:StoreView/>
+        <local:ShopView/>
 
 
     </StackPanel>

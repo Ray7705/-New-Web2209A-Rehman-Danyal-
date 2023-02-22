@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreApplication.Models
 {
-    internal class Cart
+    public class Cart
     {
         public int Quantity
         {
