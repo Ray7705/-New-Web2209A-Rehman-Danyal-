@@ -25,9 +25,8 @@ namespace StoreApplication.Views
 
         private Cart cart;
         private CartViewModel cartViewModel;
-        private StoreViewModel storeViewModel;
-        private StoreView storeView;
-        private CartView cartView;
+        private  StoreViewModel storeViewModel;
+     
         public ShopView()
         {
             InitializeComponent();
@@ -36,7 +35,7 @@ namespace StoreApplication.Views
             storeViewModel = new StoreViewModel(cart);
 
             storeView.DataContext = storeViewModel;
-            cartView.DataContext = storeView;
+            cartView.DataContext = cartViewModel;
 
         }
     

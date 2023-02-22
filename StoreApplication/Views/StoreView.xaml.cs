@@ -25,7 +25,6 @@ namespace StoreApplication.Views
         public StoreView()
         {
             InitializeComponent();
-            //     storeViewModel. += OnDisplay_Click;
                     // do it outside
         }
 

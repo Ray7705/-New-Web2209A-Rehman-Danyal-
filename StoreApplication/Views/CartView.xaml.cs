@@ -22,7 +22,7 @@ namespace StoreApplication.Views
     /// </summary>
     public partial class CartView : UserControl
     {
-        public CartView(Cart cart)
+        public CartView()
         {
             InitializeComponent();
         }
