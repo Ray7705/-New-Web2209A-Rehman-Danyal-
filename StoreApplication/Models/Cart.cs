@@ -22,17 +22,29 @@ namespace StoreApplication.Models
                 }
             }
         }
+        public List<Product> Products;
+        private decimal sum;
+        public decimal SubTotal
+        {
+            get
+            {
+                foreach (var product in Products)
+                {
+                    sum += product.Price;
+                }
 
-        public decimal SubTotal { get; }
+                return sum;
+            }
+        }
         public decimal Total
         {
             get
             {
-                return (1+taxes) * SubTotal;
+                return (1 + taxes) * SubTotal;
             }
             private set
             {
-                total= value;
+                total = value;
             }
         }
 
@@ -44,12 +56,26 @@ namespace StoreApplication.Models
         public Cart()
         {
             Quantity = 0;
-            SubTotal = 0m;
             Total = 0m;
+            Products = new List<Product>()
+            {
+
+            };
         }
 
 
+        public void AddProductToCart(Product inputProduct, String QuantityStr)
+        {
+            if (int.TryParse(QuantityStr, out quantity))
+            {
+                for (int i = 0; i < Quantity;i++)
+                {
+                    Products.Add(inputProduct);
+                }
+            }
 
+
+        }
 
     }
 }

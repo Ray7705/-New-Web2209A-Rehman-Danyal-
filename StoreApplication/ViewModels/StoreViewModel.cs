@@ -55,6 +55,7 @@ namespace StoreApplication.ViewModels
 
             }
         }
+        
         private bool CanDisplay(object _)
         {
             return product != null;

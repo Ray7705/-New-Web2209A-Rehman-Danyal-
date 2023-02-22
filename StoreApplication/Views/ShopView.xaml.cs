@@ -36,9 +36,11 @@ namespace StoreApplication.Views
 
             storeView.DataContext = storeViewModel;
             cartView.DataContext = cartViewModel;
+        }
+
+        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        {
 
         }
-        
-    
-}
+    }
 }
