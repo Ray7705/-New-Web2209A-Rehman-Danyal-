@@ -6,9 +6,20 @@
              xmlns:local="clr-namespace:StoreApplication.Views"
              mc:Ignorable="d" 
         MinHeight="700" MinWidth="700">
+    <UserControl.Resources>
+        <Style TargetType="Separator">
+            <Setter Property="MinHeight" Value="2"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="5"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+
     <StackPanel>
         <local:StoreView x:Name="storeView" x:FieldModifier="private" Visibility="Visible"/>
-        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible"/>
+        <Separator/>
+        <Separator/>
+        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible" Width="296"/>
 
     </StackPanel>
 </UserControl>
