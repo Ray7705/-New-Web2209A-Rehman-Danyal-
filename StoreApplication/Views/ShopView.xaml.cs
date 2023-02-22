@@ -1,4 +1,5 @@
 ﻿using StoreApplication.Models;
+using StoreApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,23 @@ namespace StoreApplication.Views
     /// </summary>
     public partial class ShopView : UserControl
     {
+
+        private Cart cart;
+        private CartViewModel cartViewModel;
+        private StoreViewModel storeViewModel;
+        private StoreView storeView;
+        private CartView cartView;
         public ShopView()
         {
             InitializeComponent();
+            cart = new Cart();
+            cartViewModel = new CartViewModel(cart);
+            storeViewModel = new StoreViewModel(cart);
 
-            Cart cart = new Cart();
-            StoreView storeView = new StoreView(cart);
+            storeView.DataContext = storeViewModel;
+            cartView.DataContext = storeView;
+
         }
-    }
+    
+}
 }
