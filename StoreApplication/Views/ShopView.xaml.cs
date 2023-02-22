@@ -35,6 +35,10 @@ namespace StoreApplication.Views
             cart = new Cart();
           cartViewModel = new CartViewModel(cart);
             storeViewModel = new StoreViewModel(cart);
+            
+            storeView.DataContext = storeViewModel; 
+            cartView.DataContext = storeView;
+
         }
     }
 }
