@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreApplication.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             >
 
     <StackPanel>
 
-        <DataGrid DockPanel.Dock="Top" AutoGenerateColumns="False">
+        <DataGrid DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
     
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Product Name" MinWidth="500"/>
+                <DataGridTextColumn Header="Product Name" MinWidth="200"/>
                 <DataGridTextColumn Header="Price" MinWidth="100"/>
             </DataGrid.Columns>
 
@@ -20,8 +20,8 @@
         </DataGrid>
 
 
-        <Label Content="SubTotal" HorizontalAlignment="Right"/>
-        <Label Content="Total" HorizontalAlignment="Right"/>
-        <Button Content="Pay" HorizontalAlignment="Right"/>
+        <Label Content="SubTotal" HorizontalAlignment="Center"/>
+        <Label Content="Total" HorizontalAlignment="Center"/>
+        <Button Content="Pay" HorizontalAlignment="Center"/>
     </StackPanel>
 </UserControl>

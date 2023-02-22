@@ -8,7 +8,7 @@
         MinHeight="700" MinWidth="700">
     <StackPanel>
         <local:StoreView x:Name="storeView" x:FieldModifier="private" Visibility="Visible"/>
-        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Collapsed"/>
+        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible"/>
 
     </StackPanel>
 </UserControl>

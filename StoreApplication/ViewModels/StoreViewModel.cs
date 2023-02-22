@@ -30,7 +30,7 @@ namespace StoreApplication.ViewModels
             Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
             Products.Add(new Product("voll", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
             //  DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
-            cart = new Cart();
+            Cart cartv = cart;
 
         }
         private void DisplayProduct(object _)
