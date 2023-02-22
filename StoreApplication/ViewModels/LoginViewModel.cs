@@ -11,9 +11,13 @@ namespace StoreApplication.ViewModels
 {
     public class LoginViewModel
     {
+
         public ObservableCollection<User> Users { get; }
         public DelegateCommand LogInCommand { get; }
         public DelegateCommand SignUpCommand { get; }
+
+
+
 
         public LoginViewModel()
         {
@@ -28,7 +32,7 @@ namespace StoreApplication.ViewModels
 
         private void Login(object _)
         {
-            User foundUser = Users.FirstOrDefault(user => user.Username == Username && user.Password == Password);
+
         }
         private void SignUp(object _)
         {

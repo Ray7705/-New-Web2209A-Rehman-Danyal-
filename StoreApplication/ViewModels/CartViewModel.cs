@@ -29,7 +29,7 @@ namespace StoreApplication.ViewModels
 
         public void AddProductsToCart()
         {
-
+            //put quantity as well
         }
 
         private void DisplayProduct(object _)
