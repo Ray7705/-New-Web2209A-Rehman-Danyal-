@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              >
 
-    <StackPanel>
+    <StackPanel Orientation="Horizontal">
 
         <DataGrid DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
-    
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Product Name" MinWidth="200"/>
                 <DataGridTextColumn Header="Price" MinWidth="100"/>
@@ -19,9 +19,14 @@
 
         </DataGrid>
 
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
 
-        <Label Content="SubTotal" HorizontalAlignment="Center"/>
-        <Label Content="Total" HorizontalAlignment="Center"/>
-        <Button Content="Pay" HorizontalAlignment="Center"/>
+                <Label Content="SubTotal" HorizontalAlignment="Center"/>
+                <TextBlock MinWidth="20" Text="{Binding Path=SubTotal}"/>
+            </StackPanel>
+            <Label Content="Total" HorizontalAlignment="Center"/>
+            <Button Content="Pay" HorizontalAlignment="Center"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>

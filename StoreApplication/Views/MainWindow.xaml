@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Full Of Nothing's Store" 
                 SizeToContent="WidthAndHeight"
-        MinHeight="700" MinWidth="700"
+
         >
     
     <StackPanel>

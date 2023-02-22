@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreApplication.Views"
              mc:Ignorable="d" 
-        MinHeight="700" MinWidth="700">
+        >
     <UserControl.Resources>
         <Style TargetType="Separator">
             <Setter Property="MinHeight" Value="2"/>
@@ -19,7 +19,7 @@
         <local:StoreView x:Name="storeView" x:FieldModifier="private" Visibility="Visible"/>
         <Separator/>
         <Separator/>
-        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible" Width="296"/>
+        <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible" />
 
     </StackPanel>
 </UserControl>

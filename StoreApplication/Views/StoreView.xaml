@@ -21,6 +21,7 @@
         
     </UserControl.Resources>
     <StackPanel >
+        <Separator/>
         <StackPanel >
 
             <DockPanel >
@@ -40,7 +41,7 @@
 
                     </StackPanel>
                 </Border>
-                <Separator Width="100"/>
+                <Separator Width="80"/>
 
                 <StackPanel Orientation="Horizontal"  >
                     <Separator />
@@ -54,6 +55,7 @@
 
 
                     </DataGrid>
+                    <Separator/>
                 </StackPanel>
 
 
@@ -63,6 +65,6 @@
 
             </DockPanel>
         </StackPanel>
-
+        <Separator/>
     </StackPanel>
 </UserControl>
