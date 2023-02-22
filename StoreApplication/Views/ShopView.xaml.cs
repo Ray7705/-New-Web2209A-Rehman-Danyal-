@@ -38,6 +38,7 @@ namespace StoreApplication.Views
             cartView.DataContext = cartViewModel;
 
         }
+        
     
 }
 }
