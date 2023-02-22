@@ -41,11 +41,11 @@ namespace StoreApplication.Models
         private const decimal taxes = 0.15m;
         private decimal total;
 
-        public Cart(int quantity , decimal subTotal, decimal total)
+        public Cart()
         {
-            Quantity = quantity;
-            Subtotal = subTotal;
-            Total = total;
+            Quantity = 0;
+            Subtotal = 0m;
+            Total = 0m;
         }
 
 
