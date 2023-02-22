@@ -19,7 +19,20 @@
         <local:StoreView x:Name="storeView" x:FieldModifier="private" Visibility="Visible"/>
         <Separator/>
         <Separator/>
+        <Border Background="#F5ECCD" CornerRadius="10" BorderThickness="2" MaxWidth="170" MinHeight="15">
+
+            <StackPanel  Orientation="Horizontal">
+
+                <Label Content="Quantity"/>
+                <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=cart.Quantity}" MinWidth="20" MaxHeight="20"/>
+
+                <Separator/>
+                <Button Content="Add To Cart" Background="#5762D5"/>
+            </StackPanel>
+        </Border>
+
         <local:CartView x:Name="cartView" x:FieldModifier="private" Visibility="Visible" />
+
 
     </StackPanel>
 </UserControl>
