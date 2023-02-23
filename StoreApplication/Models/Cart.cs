@@ -68,7 +68,7 @@ namespace StoreApplication.Models
         {
             if (int.TryParse(QuantityStr, out quantity))
             {
-                for (int i = 0; i < Quantity;i++)
+                for (int i = 0; i < Quantity; i++)
                 {
                     Products.Add(inputProduct);
                 }
