@@ -24,7 +24,7 @@
             <StackPanel  Orientation="Horizontal">
 
                 <Label Content="Quantity"/>
-                <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=cart.Quantity}" MinWidth="20" MaxHeight="20" MaxWidth="30"/>
+                <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=Quantitystr}" MinWidth="20" MaxHeight="20" MaxWidth="30"/>
 
                 <Separator/>
                 <Button Content="Add To Cart" Background="#5762D5" Click="AddToCart_Click"/>

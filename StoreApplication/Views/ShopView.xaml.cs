@@ -2,6 +2,7 @@
 using StoreApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,8 @@ namespace StoreApplication.Views
 
         private Cart cart;
         private CartViewModel cartViewModel;
-        private  StoreViewModel storeViewModel;
-     
+        private StoreViewModel storeViewModel;
+
         public ShopView()
         {
             InitializeComponent();
@@ -40,7 +41,27 @@ namespace StoreApplication.Views
 
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
+            if (storeViewModel.SelectedProduct != null && !string.IsNullOrEmpty(Quantitystr)) //TODO : quantity != null
+            {
+                cart.AddProductToCart(storeViewModel.SelectedProduct,Quantitystr);
+
+
+            }
+
 
         }
+        private string quantitystr;
+        public string Quantitystr
+        {
+            get
+            {
+                return quantitystr;
+            }
+            set
+            {
+                quantitystr = value;
+            }
+        }
+
     }
 }
