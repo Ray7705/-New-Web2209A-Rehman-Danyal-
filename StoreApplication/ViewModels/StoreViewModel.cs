@@ -18,6 +18,9 @@ namespace StoreApplication.ViewModels
         public DelegateCommand AddToCartCommand { get; }
         public Cart Cart { get; }
 
+
+
+
         private Product selectedProduct;
         public Product SelectedProduct
         {

@@ -15,6 +15,7 @@ namespace StoreApplication.Models
         {
             get
             {
+                sum = 0;
                 foreach (var product in CartProducts)
                 {
                     sum += product.Price;

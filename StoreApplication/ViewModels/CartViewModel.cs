@@ -22,7 +22,43 @@ namespace StoreApplication.ViewModels
             Cart = cart;
             NotifyPropertyChanged(nameof(cart));
         }
-      
+        public DelegateCommand RemoveFromCartCommand { get; }
+
+
+        public CartViewModel()
+        {
+            RemoveFromCartCommand = new DelegateCommand(RemoveFromCart);
+        }
+
+
+
+
+
+        private Product selectedProductCart;
+        public Product SelectedProductCart
+        {
+            get
+            {
+                return selectedProductCart;
+            }
+            set
+            {
+                selectedProductCart = value;
+                NotifyPropertyChanged(nameof(SelectedProductCart));
+
+
+            }
+        }
+        private void RemoveFromCart(object _)
+        {
+            if (SelectedProductCart != null)
+            {
+                Cart.CartProducts.Remove(SelectedProductCart);
+                NotifyPropertyChanged(nameof(Cart.CartProducts));
+            }
+        }
+
     }
+
 }
 

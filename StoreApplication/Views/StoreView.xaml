@@ -27,14 +27,16 @@
             <DockPanel >
 
                 <Border DockPanel.Dock="Bottom" Background="#F5ECCD" CornerRadius="10" BorderThickness="2" MaxWidth="170" MinHeight="15">
-
-                    <StackPanel MaxWidth="300" Orientation="Horizontal">
+                    <StackPanel>
+                    <StackPanel MaxWidth="400" Orientation="Horizontal">
 
                         <Label Content="Quantity"/>
                         <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=QuantityStr}" MinWidth="20" MaxHeight="20" MaxWidth="30"/>
 
                         <Separator/>
                         <Button Content="Add To Cart" Background="#5762D5" Command="{Binding Path=AddToCartCommand}"/>
+                    </StackPanel>
+                        
                     </StackPanel>
                 </Border>
 

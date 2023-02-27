@@ -15,7 +15,7 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel>
+    <StackPanel Background="#004857">
         <local:StoreView x:Name="storeView" x:FieldModifier="private" Visibility="Visible" />
         <Separator/>
         <Separator/>

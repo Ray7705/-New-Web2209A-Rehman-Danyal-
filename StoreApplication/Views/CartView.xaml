@@ -11,8 +11,9 @@
 
            
         <StackPanel Orientation="Horizontal">
+            <Button Content="Remove From Cart" Command="{Binding Path=RemoveFromCartCommand}"/>
 
-            <DataGrid  ItemsSource="{Binding Path=Cart.CartProducts}" DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid  ItemsSource="{Binding Path=Cart.CartProducts}" SelectionMode="Single" SelectedItem="{Binding Path=SelectedProductCart}" DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Product Name" Binding="{Binding Path=Name}" MinWidth="200"/>
