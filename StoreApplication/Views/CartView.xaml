@@ -12,11 +12,11 @@
            
         <StackPanel Orientation="Horizontal">
 
-            <DataGrid  ItemsSource="{Binding Path=Cart.Products}" DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid  ItemsSource="{Binding Path=Cart.CartProducts}" DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Product Name" Binding="{Binding Path=ProductsInCard.Name}" MinWidth="200"/>
-                    <DataGridTextColumn Header="Price" Binding="{Binding Path=ProductsInCard.Price}" MinWidth="100"/>
+                    <DataGridTextColumn Header="Product Name" Binding="{Binding Path=Name}" MinWidth="200"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" MinWidth="100"/>
                 </DataGrid.Columns>
 
 
@@ -36,6 +36,7 @@
                 <Button Content="Pay" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
+        
         
     </StackPanel>
 </UserControl>

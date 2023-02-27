@@ -34,7 +34,7 @@
                         <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=QuantityStr}" MinWidth="20" MaxHeight="20" MaxWidth="30"/>
 
                         <Separator/>
-                        <Button Content="Add To Cart" Background="#5762D5" Command="{Binding Path=AddToCartCommand}"  />
+                        <Button Content="Add To Cart" Background="#5762D5" Command="{Binding Path=AddToCartCommand}"/>
                     </StackPanel>
                 </Border>
 

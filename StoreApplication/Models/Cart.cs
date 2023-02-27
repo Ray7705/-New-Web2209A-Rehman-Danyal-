@@ -15,7 +15,7 @@ namespace StoreApplication.Models
         {
             get
             {
-                foreach (var product in ProductsInCard)
+                foreach (var product in CartProducts)
                 {
                     sum += product.Price;
                 }
@@ -31,7 +31,7 @@ namespace StoreApplication.Models
             }
 
         }
-        public ObservableCollection<Product> ProductsInCard { get; }
+        public ObservableCollection<Product> CartProducts { get; }
 
         private const decimal taxes = 0.15m;
         public string VolleyballImg => "https://upload.wikimedia.org/wikipedia/commons/5/5a/Volleyball_ball.jpg";
@@ -39,11 +39,11 @@ namespace StoreApplication.Models
         public Cart()
         {
             Products = new ObservableCollection<Product>();
-            ProductsInCard = new ObservableCollection<Product>();
-
-
+            CartProducts = new ObservableCollection<Product>();
+          
+            
             //to do :delete
-            ProductsInCard.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
+            CartProducts.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
             Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
         }
 
@@ -51,7 +51,7 @@ namespace StoreApplication.Models
         public void AddProductToCart(Product inputProduct, int quantity)
         {
            for(int i = 0; i < quantity; i++)
-            ProductsInCard.Add(inputProduct);
+            CartProducts.Add(inputProduct);
 
         }
 

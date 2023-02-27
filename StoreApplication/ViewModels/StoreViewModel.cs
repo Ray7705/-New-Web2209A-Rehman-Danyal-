@@ -15,7 +15,7 @@ namespace StoreApplication.ViewModels
     public class StoreViewModel : ViewModel, INotifyPropertyChanged
     {
 
-        public DelegateCommand AddToCartCommand;
+        public DelegateCommand AddToCartCommand { get; }
         public Cart Cart { get; }
 
         private Product selectedProduct;
@@ -35,7 +35,7 @@ namespace StoreApplication.ViewModels
         }
         private void AddToCart(object _)
         {
-            if (SelectedProduct == null && Quantity > 0)
+            if (SelectedProduct != null && Quantity > 0)
                 Cart.AddProductToCart(SelectedProduct, Quantity);
 
         }
@@ -58,13 +58,20 @@ namespace StoreApplication.ViewModels
             }
         }
 
+        public DelegateCommand PayCommand { get; }
+
         public StoreViewModel(Cart cart)
         {
             Cart = cart;
             AddToCartCommand = new DelegateCommand(AddToCart);
+            PayCommand = new DelegateCommand(Pay);
         }
 
-        
+        private void Pay(object _)
+        {
+            //TODO
+
+        }
 
         
         //public string SelectedProductName { get { return SelectedProduct.Name; } }
