@@ -1,4 +1,5 @@
-﻿using StoreApplication.Models;
+﻿using Chevalier.Utility.Commands;
+using StoreApplication.Models;
 using StoreApplication.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,11 +24,9 @@ namespace StoreApplication.Views
     /// </summary>
     public partial class ShopView : UserControl
     {
-
         private Cart cart;
         private CartViewModel cartViewModel;
         private StoreViewModel storeViewModel;
-
         public ShopView()
         {
             InitializeComponent();
@@ -38,30 +37,14 @@ namespace StoreApplication.Views
             storeView.DataContext = storeViewModel;
             cartView.DataContext = cartViewModel;
         }
-
-        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        public void AddToCart()
         {
-            if (storeViewModel.SelectedProduct != null && !string.IsNullOrEmpty(Quantitystr)) //TODO : quantity != null
-            {
-                cart.AddProductToCart(storeViewModel.SelectedProduct,Quantitystr);
-
-
-            }
-
 
         }
-        private string quantitystr;
-        public string Quantitystr
-        {
-            get
-            {
-                return quantitystr;
-            }
-            set
-            {
-                quantitystr = value;
-            }
-        }
 
+        private void cartView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

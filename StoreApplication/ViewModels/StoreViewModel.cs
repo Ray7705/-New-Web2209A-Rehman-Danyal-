@@ -11,56 +11,62 @@ using System.Threading.Tasks;
 
 namespace StoreApplication.ViewModels
 {
-        public delegate void DisplayProductDelegate();
-    public class StoreViewModel :ViewModel , INotifyPropertyChanged
+    public delegate void DisplayProductDelegate();
+    public class StoreViewModel : ViewModel, INotifyPropertyChanged
     {
-        public event DisplayProductDelegate DisplayProductevent;
 
-        public string VolleyballImg => "https://upload.wikimedia.org/wikipedia/commons/5/5a/Volleyball_ball.jpg";
+        public DelegateCommand AddToCartCommand;
+        public Cart Cart { get; }
 
-        public ObservableCollection<Product> Products { get; }
-        //public DelegateCommand DisplayProductCommand { get; }
-
-        public StoreViewModel(Cart cart)
-        {
-            Products = new ObservableCollection<Product>();
-            {
-
-            }
-            Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
-            Products.Add(new Product("voll", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
-            //  DisplayProductCommand = new DelegateCommand(DisplayProduct, CanDisplay);
-            Cart cartv = cart;
-
-        }
-        private void DisplayProduct(object _)
-        {
-            
-            
-        }
-        
-       private Product product;
+        private Product selectedProduct;
         public Product SelectedProduct
         {
             get
             {
-                return product;
+                return selectedProduct;
             }
             set
             {
-                product = value;
-                //DisplayProductCommand.NotifyCanExecuteChanged();
+                selectedProduct = value;
                 NotifyPropertyChanged(nameof(SelectedProduct));
-                DisplayProductevent?.Invoke();
+                
 
             }
         }
-        
-        private bool CanDisplay(object _)
+        private void AddToCart(object _)
         {
-            return product != null;
+            if (SelectedProduct == null && Quantity > 0)
+                Cart.AddProductToCart(SelectedProduct, Quantity);
+
+        }
+        public int Quantity { get; private set; }
+        public string QuantityStr
+        {
+            get
+            {
+                return Quantity.ToString();
+            }
+            
+            set
+            {
+                if(int.TryParse(value,out int result))
+                {
+                    Quantity = result;
+                    NotifyPropertyChanged(nameof(Quantity));
+                    NotifyPropertyChanged(nameof(QuantityStr));
+                }
+            }
         }
 
+        public StoreViewModel(Cart cart)
+        {
+            Cart = cart;
+            AddToCartCommand = new DelegateCommand(AddToCart);
+        }
+
+        
+
+        
         //public string SelectedProductName { get { return SelectedProduct.Name; } }
         //public string SelectedProductDescription { get { return SelectedProduct.Description; } }
         ////public string SelectedProductImgPath { get { return SelectedProduct.ImgPath; } }

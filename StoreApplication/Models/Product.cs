@@ -40,6 +40,6 @@ namespace StoreApplication.Models
 
         public string Description { get; private set; }
 
-
+        public int Quantity { get;  set; }   
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,27 +9,13 @@ namespace StoreApplication.Models
 {
     public class Cart
     {
-        public int Quantity
-        {
-            get
-            {
-                return quantity;
-            }
-            set
-            {
-                if (quantity >= 0)
-                {
-                    quantity = value;
-                }
-            }
-        }
-        public List<Product> Products;
+        public ObservableCollection<Product> Products { get; }
         private decimal sum;
         public decimal SubTotal
         {
             get
             {
-                foreach (var product in Products)
+                foreach (var product in ProductsInCard)
                 {
                     sum += product.Price;
                 }
@@ -42,38 +29,29 @@ namespace StoreApplication.Models
             {
                 return (1 + taxes) * SubTotal;
             }
-            private set
-            {
-                total = value;
-            }
+
         }
+        public ObservableCollection<Product> ProductsInCard { get; }
 
-
-        private int quantity;
         private const decimal taxes = 0.15m;
-        private decimal total;
+        public string VolleyballImg => "https://upload.wikimedia.org/wikipedia/commons/5/5a/Volleyball_ball.jpg";
 
         public Cart()
         {
-            Quantity = 0;
-            Total = 0m;
-            Products = new List<Product>()
-            {
+            Products = new ObservableCollection<Product>();
+            ProductsInCard = new ObservableCollection<Product>();
 
-            };
+
+            //to do :delete
+            ProductsInCard.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
+            Products.Add(new Product("vollavlmaev", 100, 22.30m, VolleyballImg, 0, "akwnfawf"));
         }
 
 
-        public void AddProductToCart(Product inputProduct, String QuantityStr)
+        public void AddProductToCart(Product inputProduct, int quantity)
         {
-            if (int.TryParse(QuantityStr, out quantity))
-            {
-                for (int i = 0; i < Quantity; i++)
-                {
-                    Products.Add(inputProduct);
-                }
-            }
-
+           for(int i = 0; i < quantity; i++)
+            ProductsInCard.Add(inputProduct);
 
         }
 

@@ -7,29 +7,35 @@
              mc:Ignorable="d" 
              >
 
-    <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Vertical">
 
-        <DataGrid DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+           
+        <StackPanel Orientation="Horizontal">
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Product Name" MinWidth="200"/>
-                <DataGridTextColumn Header="Price" MinWidth="100"/>
-            </DataGrid.Columns>
+            <DataGrid  ItemsSource="{Binding Path=Cart.Products}" DockPanel.Dock="Top" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product Name" Binding="{Binding Path=ProductsInCard.Name}" MinWidth="200"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Path=ProductsInCard.Price}" MinWidth="100"/>
+                </DataGrid.Columns>
 
 
-        </DataGrid>
+            </DataGrid>
 
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="SubTotal: " HorizontalAlignment="Center"/>
-                <TextBlock MinWidth="20" Text="{Binding Path=SubTotal}"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="SubTotal: " HorizontalAlignment="Center"/>
+
+                    <TextBlock MinWidth="20" Text="{Binding Path=Cart.SubTotal}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Total: " HorizontalAlignment="Center"/>
+                    <TextBlock MinWidth="20" Text="{Binding Path=Cart.Total}"/>
+                </StackPanel>
+                <Button Content="Pay" HorizontalAlignment="Center"/>
             </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Total: " HorizontalAlignment="Center"/>
-                <TextBlock MinWidth="20" Text="{Binding Path=Total}"/>
-            </StackPanel>
-            <Button Content="Pay" HorizontalAlignment="Center"/>
         </StackPanel>
+        
     </StackPanel>
 </UserControl>

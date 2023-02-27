@@ -25,6 +25,21 @@
         <StackPanel >
 
             <DockPanel >
+
+                <Border DockPanel.Dock="Bottom" Background="#F5ECCD" CornerRadius="10" BorderThickness="2" MaxWidth="170" MinHeight="15">
+
+                    <StackPanel MaxWidth="300" Orientation="Horizontal">
+
+                        <Label Content="Quantity"/>
+                        <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged,Path=QuantityStr}" MinWidth="20" MaxHeight="20" MaxWidth="30"/>
+
+                        <Separator/>
+                        <Button Content="Add To Cart" Background="#5762D5" Command="{Binding Path=AddToCartCommand}"  />
+                    </StackPanel>
+                </Border>
+
+
+
                 <Separator/>
                 <Border CornerRadius="8" BorderBrush="GreenYellow" BorderThickness="2">
 
@@ -45,7 +60,7 @@
 
                 <StackPanel Orientation="Horizontal"  >
                     <Separator />
-                    <DataGrid  Background="#8DAA9D"  ItemsSource="{Binding Path=Products}" Height="300" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
+                    <DataGrid  Background="#8DAA9D"  ItemsSource="{Binding Path=Cart.Products}" Height="300" SelectionMode="Single" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" SelectedItem="{Binding Path=SelectedProduct}" >
                         <DataGrid.Columns  >
                            
                             <DataGridTextColumn MinWidth="100" Header="Name" Binding="{Binding Path=Name}" IsReadOnly="True"/>
@@ -59,11 +74,8 @@
                 </StackPanel>
 
 
-
-           
-
-
             </DockPanel>
+
         </StackPanel>
         <Separator/>
     </StackPanel>
